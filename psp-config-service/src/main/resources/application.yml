@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: psp-config #服务名称
+  cloud: 
+    config: 
+      server: 
+        default-application-name: psp-config 
+
+#port
+server:
+  port: ${CONTAINER_PORT:9202}
+

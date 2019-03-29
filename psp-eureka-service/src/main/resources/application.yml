@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: psp-eureka #服务名称
+
+#port
+server:
+  port: ${CONTAINER_PORT:9292}
+
+security:
+  basic:
+    enabled: false #注册安全认证开关
+  user:
+    name: psp
+    password: abc=1234
+
+#eureka
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    # 集群的情况下设置为true
+    registerWithEureka: ${BOOL_REGISTER:false}
+    # 集群的情况下设置为true
+    fetchRegistry:  ${BOOL_FETCH:false}
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
