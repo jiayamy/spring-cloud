@@ -1,21 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.psp</groupId>
-  <artifactId>psp-cloud-main</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+	<groupId>com.psp</groupId>
+	<artifactId>psp-cloud-main</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-  <name>psp-cloud-main</name>
-  <url>http://maven.apache.org</url>
+	<name>psp-cloud-main</name>
+	<url>http://maven.apache.org</url>
 
-  <parent>
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.15.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<guava.version>17.0</guava.version>
+	</properties>
 
 	<dependencyManagement>
 		<dependencies>
@@ -112,4 +119,10 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<modules>
+		<module>psp-eureka-service</module>
+		<module>psp-gateway-service</module>
+		<module>psp-config-service</module>
+		<module>psp-bus-service</module>
+	</modules>
 </project>
